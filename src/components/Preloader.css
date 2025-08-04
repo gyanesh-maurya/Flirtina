@@ -1,0 +1,243 @@
+/* Preloader Styles */
+.preloader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+}
+
+.preloader-container {
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.preloader-logo {
+  margin-bottom: 2rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.preloader-logo-img {
+  max-width: 120px;
+  max-height: 120px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 20, 147, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  box-shadow: 
+    0 8px 32px rgba(255, 20, 147, 0.3),
+    0 4px 16px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  padding: 6px;
+}
+
+.preloader-logo-img:hover {
+  transform: scale(1.05);
+  border-color: rgba(255, 20, 147, 0.4);
+  box-shadow: 
+    0 12px 40px rgba(255, 20, 147, 0.4),
+    0 6px 20px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.preloader-content {
+  margin-bottom: 3rem;
+}
+
+.preloader-title {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ff1493, #ff69b4, #ff1493);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 0.5rem 0;
+  animation: gradientShift 3s ease-in-out infinite;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.preloader-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin: 0;
+  opacity: 0.8;
+  animation: fadeIn 1s ease-out 0.5s both;
+}
+
+.preloader-spinner {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.spinner-ring {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+.spinner-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  margin: 6px;
+  border: 3px solid transparent;
+  border-top: 3px solid #ff1493;
+  border-radius: 50%;
+  animation: spinnerRotate 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.spinner-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.spinner-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.spinner-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+.preloader-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #ff1493;
+  border-radius: 50%;
+  animation: dotBounce 1.4s ease-in-out infinite both;
+}
+
+.dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0s;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes spinnerRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dotBounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+/* Dark theme adjustments */
+[data-color-scheme="dark"] .preloader-logo-img {
+  border-color: rgba(255, 20, 147, 0.3);
+  background: rgba(0, 0, 0, 0.15);
+  box-shadow: 
+    0 8px 32px rgba(255, 20, 147, 0.4),
+    0 4px 16px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+[data-color-scheme="dark"] .preloader-subtitle {
+  opacity: 0.9;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .preloader-title {
+    font-size: 2.5rem;
+  }
+  
+  .preloader-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .preloader-logo-img {
+    max-width: 100px;
+    max-height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .preloader-title {
+    font-size: 2rem;
+  }
+  
+  .preloader-subtitle {
+    font-size: 1rem;
+  }
+  
+  .preloader-logo-img {
+    max-width: 80px;
+    max-height: 80px;
+  }
+}

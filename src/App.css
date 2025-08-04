@@ -1,0 +1,33 @@
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure smooth transition when hiding preloader */
+.app[style*="display: none"] {
+  display: none !important;
+}
+
+.app-container {
+  display: flex;
+  flex: 1;
+  height: calc(100vh - 60px); /* Account for header height */
+}
+
+.app-container.sidebar-open .sidebar {
+  transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  .app-container.sidebar-open::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+  }
+}
