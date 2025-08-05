@@ -28,3 +28,8 @@ dist-ssr/
 *.njsproj
 *.sln
 *.sw?
+
+# Legal documents (generated/managed separately if needed)
+public/privacy.html
+public/terms.html
+

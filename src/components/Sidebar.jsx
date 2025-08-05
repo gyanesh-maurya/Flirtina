@@ -100,6 +100,26 @@ const Sidebar = ({
           </svg>
           Clear History
         </button>
+        
+        <div className="sidebar-legal-links">
+          <button 
+            className="legal-link"
+            onClick={() => alert('Coming Soon!')}
+          >
+            Terms & Conditions
+          </button>
+          <span className="legal-separator">•</span>
+          <button 
+            className="legal-link"
+            onClick={() => alert('Coming Soon!')}
+          >
+            Privacy Policy
+          </button>
+        </div>
+        
+        <div className="sidebar-credits">
+          <p>Made with 💖 by <a href="https://gyaneshmaurya.tech" target="_blank" rel="noopener noreferrer">Gyanesh Maurya</a></p>
+        </div>
       </div>
     </aside>
   );

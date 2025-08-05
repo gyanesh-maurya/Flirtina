@@ -311,7 +311,7 @@ We welcome contributions to make Flirtina even more charming! Here's how you can
 - **Testing**: Test your changes thoroughly
 - **Documentation**: Update README if you add features
 
-## 👨‍💻 Creator
+## �👨‍💻 Creator
 
 **Gyanesh Maurya**
 - 🐙 GitHub: [@gyanesh-maurya](https://github.com/gyanesh-maurya)
