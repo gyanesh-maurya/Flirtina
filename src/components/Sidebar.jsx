@@ -104,16 +104,9 @@ const Sidebar = ({
         <div className="sidebar-legal-links">
           <button 
             className="legal-link"
-            onClick={() => alert('Coming Soon!')}
+            onClick={() => window.open('/terms.html', '_blank')}
           >
             Terms & Conditions
-          </button>
-          <span className="legal-separator">•</span>
-          <button 
-            className="legal-link"
-            onClick={() => alert('Coming Soon!')}
-          >
-            Privacy Policy
           </button>
         </div>
         
